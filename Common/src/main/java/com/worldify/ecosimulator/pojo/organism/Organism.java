@@ -1,5 +1,7 @@
 package com.worldify.ecosimulator.pojo.organism;
 
+import lombok.Data;
+
 import java.util.UUID;
 
 /**
@@ -8,6 +10,7 @@ import java.util.UUID;
  * @Version 1.0
  * @Description
  */
+@Data
 public abstract class Organism {
     // Which block the organism is currently in
     private UUID blockID;

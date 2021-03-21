@@ -1,6 +1,7 @@
 package com.worldify.ecosimulator.pojo.organism.animal;
 
 import com.worldify.ecosimulator.pojo.organism.Organism;
+import lombok.Data;
 
 /**
  * @Author Zhiwen Zhu
@@ -8,5 +9,6 @@ import com.worldify.ecosimulator.pojo.organism.Organism;
  * @Version 1.0
  * @Description
  */
+@Data
 public abstract class Animal extends Organism {
 }
