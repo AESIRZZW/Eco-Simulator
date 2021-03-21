@@ -1,4 +1,4 @@
-package com.worldify.ecosimulator.pojo.world;
+package com.worldify.ecosimulator.pojo.world.map;
 
 /**
  * @Author Zhiwen Zhu
