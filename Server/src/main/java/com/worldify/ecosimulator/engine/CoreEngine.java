@@ -1,23 +1,27 @@
-package com.worldify.ecosimulator.pojo.world;
+package com.worldify.ecosimulator.engine;
 
 import com.worldify.ecosimulator.pojo.organism.Organism;
 import com.worldify.ecosimulator.pojo.world.map.Block;
-import lombok.Data;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
  * @Author Zhiwen Zhu
- * @Date 2021/3/21 22:49
+ * @Date 2021/3/21 23:51
  * @Version 1.0
  * @Description
  */
 
-@Data
-public class World {
+@Component
+public class CoreEngine {
+
     private List<Block> blocks;
     private List<Organism> organisms;
 
-    public World(List<Block> blocks, List<Organism> organisms) {
+    @PostConstruct
+    private void start() {
+        
     }
 }

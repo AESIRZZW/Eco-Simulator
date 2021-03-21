@@ -1,13 +1,29 @@
 package com.worldify.ecosimulator.pojo.world.util;
 
+import com.worldify.ecosimulator.pojo.world.World;
+import com.worldify.ecosimulator.pojo.world.map.Block;
+
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  * @Author Zhiwen Zhu
  * @Date 2021/3/21 22:28
  * @Version 1.0
  * @Description A simplest world generator
  */
-public class WorldGenerator {
-    public static void main(String[] args) {
+public final class WorldGenerator {
 
+    public static World generateRandomWorld(long x, long y, long z) {
+        List<Block> blocks = generateRandomMap(x, y, z);
+        return new World(blocks, null);
+    }
+
+    private static List<Block> generateRandomMap(long x, long y, long z) {
+        Stream<Long> xStream = Stream.iterate(-x, i -> i + 1).limit(2 * x + 1);
+        Stream<Long> yStream = Stream.iterate(-y, i -> i + 1).limit(2 * y + 1);
+        return xStream.flatMap(i -> yStream.map(j -> new Block(UUID.randomUUID(), i, j, (long) (-z + Math.random() * 2 * z)))).collect(Collectors.toList());
     }
 }
