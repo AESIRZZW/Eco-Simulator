@@ -21,5 +21,9 @@ public class Block {
     private long[] coordinate = new long[3];
 
     public Block(UUID blockID, long x, long y, long z) {
+        this.blockID = blockID;
+        this.coordinate[0] = x;
+        this.coordinate[1] = y;
+        this.coordinate[2] = z;
     }
 }
